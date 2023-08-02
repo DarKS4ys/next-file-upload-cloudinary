@@ -91,8 +91,8 @@ const Dropzone = ({ className }) => {
         })}
       >
         <input {...getInputProps({ name: 'file' })} />
-        <div className='flex flex-col items-center justify-center gap-4'>
-          <ArrowUpTrayIcon className='h-5 w-5 fill-current' />
+        <div className='flex flex-col items-center justify-center gap-4 text-white'>
+          <ArrowUpTrayIcon className='h-8 w-8 text-white' />
           {isDragActive ? (
             <p>Drop the files here ...</p>
           ) : (
@@ -104,24 +104,24 @@ const Dropzone = ({ className }) => {
       {/* Preview */}
       <section className='mt-10'>
         <div className='flex gap-4'>
-          <h2 className='title text-3xl font-semibold'>Preview</h2>
+          <h2 className='title text-3xl font-semibold text-white'>Preview</h2>
           <button
             type='button'
             onClick={removeAll}
-            className='mt-1 rounded-md border border-rose-400 px-3 text-[12px] font-bold uppercase tracking-wider text-stone-500 transition-colors hover:bg-rose-400 hover:text-white'
+            className='mt-1 rounded-md border border-cyan-700 px-3 text-[12px] font-bold uppercase tracking-wider text-white transition-colors hover:bg-white hover:text-black'
           >
             Remove all files
           </button>
           <button
             type='submit'
-            className='ml-auto mt-1 rounded-md border border-purple-400 px-3 text-[12px] font-bold uppercase tracking-wider text-stone-500 transition-colors hover:bg-purple-400 hover:text-white'
+            className='ml-auto mt-1 rounded-md border border-purple-400 px-3 text-[12px] font-bold uppercase tracking-wider text-white transition-colors hover:bg-purple-400 hover:text-white'
           >
             Upload to Cloudinary
           </button>
         </div>
 
         {/* Accepted files */}
-        <h3 className='title mt-10 border-b pb-3 text-lg font-semibold text-stone-600'>
+        <h3 className='title mt-10 border-b pb-3 text-lg font-semibold text-white'>
           Accepted Files
         </h3>
         <ul className='mt-6 grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6'>
@@ -144,7 +144,7 @@ const Dropzone = ({ className }) => {
               >
                 <XMarkIcon className='h-5 w-5 fill-white transition-colors hover:fill-rose-400' />
               </button>
-              <p className='mt-2 text-[12px] font-medium text-stone-500'>
+              <p className='mt-2 text-[12px] font-medium text-white'>
                 {file.name}
               </p>
             </li>
@@ -152,14 +152,14 @@ const Dropzone = ({ className }) => {
         </ul>
 
         {/* Rejected Files */}
-        <h3 className='title mt-24 border-b pb-3 text-lg font-semibold text-stone-600'>
+        <h3 className='title mt-24 border-b pb-3 text-lg font-semibold text-white'>
           Rejected Files
         </h3>
         <ul className='mt-6 flex flex-col'>
           {rejected.map(({ file, errors }) => (
             <li key={file.name} className='flex items-start justify-between'>
               <div>
-                <p className='mt-2 text-sm font-medium text-stone-500'>
+                <p className='mt-2 text-sm font-medium text-white'>
                   {file.name}
                 </p>
                 <ul className='text-[12px] text-red-400'>
